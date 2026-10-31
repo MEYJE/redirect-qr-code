@@ -1,29 +1,96 @@
+/* Identidade visual Meyje (cores e fonte do meyje.com.br) */
+:root {
+    --meyje-purple: #8800FF;
+    --meyje-pink: #FF00A2;
+    --meyje-black: #171717;
+    --meyje-graphite: #212121;
+    --meyje-white: #FFFFFF;
+    --meyje-muted: #A3A3A3;
+    --meyje-purple-light: #B266FF; /* roxo da marca clareado p/ contraste em fundo escuro */
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 16px;
+    font-family: "Geist", Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
-    color: #333;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(136, 0, 255, 0.25), transparent 60%),
+        var(--meyje-black);
+    color: var(--meyje-white);
 }
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: var(--meyje-graphite);
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 32px;
+}
+
+.loader {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 20px;
+    border: 3px solid rgba(255, 255, 255, 0.12);
+    border-top-color: var(--meyje-purple);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 8px;
 }
+
 p {
     font-size: 1rem;
-    margin-top: 0;
+    margin: 0;
+    color: var(--meyje-muted);
 }
+
 a {
-    color: #0073e6;
+    color: var(--meyje-purple-light);
     text-decoration: none;
+    font-weight: 500;
 }
+
 a:hover {
+    color: var(--meyje-pink);
     text-decoration: underline;
-}.social {
-    margin-top: 1.5rem;
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loader { animation: none; }
 }
